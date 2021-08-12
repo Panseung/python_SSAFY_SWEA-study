@@ -31,10 +31,6 @@ for w in range(1, CT+1):
             pot += (lst[x][y])
         big_pot.append(pot)
     lst3.append(big_pot)   
-   
-    '''print(lst1)
-    print(lst2)
-    print(lst3)'''
 
     print(f'#{w}')
     for i in range(N):
