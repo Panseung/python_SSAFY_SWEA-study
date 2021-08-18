@@ -3,8 +3,9 @@ for tc in range(1, TC+1):
     N, K = map(int, input().split())
     lst = []    # 학생 총점 리스트
     for _ in range(N):
-        lst.append(sum(map(int, input().split())))
-    grade = ['A+', 'A', 'A-', 'B+', 'B', 'B-', 'C+', 'C', 'C-', 'D0']
+        middle, final, assignment = map(int, input().split())
+        lst.append(middle*0.35 + final*0.45 + assignment*0.2)   #합산점수로 바로 리스트 넣기
+    grade = ['A+', 'A0', 'A-', 'B+', 'B0', 'B-', 'C+', 'C0', 'C-', 'D0']
     grade_lst = []  # 줄 수 있는 등급 리스트(갯수 포함)
     for i in range(len(grade)):
         for j in range(N//10):
