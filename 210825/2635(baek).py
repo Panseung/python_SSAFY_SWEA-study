@@ -1,11 +1,11 @@
 def connecting(lst):
     global N
-    M = N-1
+    M = N
     maxV = 0
     result = []
-    while M >= 0:
+    while M >= 1:
         lst.append(M)
-        while lst[-2] > lst[-1]:
+        while lst[-2] >= lst[-1]:
             lst.append(lst[-2] - lst[-1])
         if len(lst) > maxV:
             maxV = len(lst)
