@@ -22,9 +22,9 @@ def shoot(posy, posx, direction):
         if posy < 0 or posy >= H or posx < 0 or posx >= W:  # 포탄이 맵 밖으로 나가면
             break
 
-        elif game_map[posy][posx] == '#':
+        elif game_map[posy][posx] == '#':   # 강철벽 만남
             meet_wall = False
-        elif game_map[posy][posx] == '*':
+        elif game_map[posy][posx] == '*':   # 벽돌 평지로
             game_map[posy][posx] = '.'
             meet_wall = False
 
@@ -63,14 +63,14 @@ for t in range(1, T + 1):
         cmd_lst.append(i)
 
     pos_y = 0  # 게임 시작시 전차 위치 찾기
-    pos_x = 0  # 질문!!!!!!!!!!!!
+    pos_x = 0
     for y in range(H):
         for x in range(W):
             if game_map[y][x] in tank:
                 pos_y, pos_x = y, x
                 break
 
-    direc = find_direc(pos_y, pos_x)
+    direc = find_direc(pos_y, pos_x)    # 현재 탱크가 바라보고 있는 방향 0,1,2,3 : 상하좌우
     while cmd_lst:
         cmd = cmd_lst.pop(0)
         if cmd == 'S':
