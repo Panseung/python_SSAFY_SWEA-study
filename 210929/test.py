@@ -57,7 +57,3 @@ for tc in range(1, T+1):
                 x += dx[k]
                 y += dy[k]
             arr[x][y] = direction[k]
-
-    print(f'#{tc}', end=' ')
-    for i in range(H):
-        print(''.join(arr[i]))
