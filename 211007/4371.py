@@ -20,7 +20,3 @@ for tc in range(1, T+1):
         pos += 1
 
     print(f'#{tc} {len(differences)}')
-
-# 1
-# 7
-# 10
