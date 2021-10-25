@@ -1,3 +1,8 @@
+# 2628. 종이자르기
+# 백준
+# Link : https://www.acmicpc.net/problem/2628
+
+
 def cutting(square, direction_point):
     y1 = square[0]
     x1 = square[1]
@@ -8,8 +13,8 @@ def cutting(square, direction_point):
     new_square = []
     if direction:  # 세로이면
         if x1 < point < x2:
-             new_square.append([y1, x1, y2, point])
-             new_square.append([y1, point, y2, x2])
+            new_square.append([y1, x1, y2, point])
+            new_square.append([y1, point, y2, x2])
     else:
         if y1 < point < y2:
             new_square.append([y1, x1, point, x2])

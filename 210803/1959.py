@@ -1,3 +1,8 @@
+# 1959. 두 개의 숫자열
+# Level D2
+# Link : https://swexpertacademy.com/main/code/problem/problemDetail.do?contestProbId=AV5PpoFaAS4DFAUq
+
+
 cnt = int(input())
 for k in range(cnt):
     Ai, Bj = map(int, input().split())
@@ -14,7 +19,7 @@ for k in range(cnt):
                 result.append(A[j] * B[j + q])
             lst.append(sum(result))
             q += 1
-        print(f'#{k+1} {max(lst)}')
+        print(f'#{k + 1} {max(lst)}')
     else:
         for i in range(abs(Ai - Bj) + 1):
             result = []
@@ -22,6 +27,4 @@ for k in range(cnt):
                 result.append(A[j + q] * B[j])
             lst.append(sum(result))
             q += 1
-        print(f'#{k+1} {max(lst)}')
-
-        
+        print(f'#{k + 1} {max(lst)}')

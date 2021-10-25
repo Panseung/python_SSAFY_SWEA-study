@@ -1,86 +1,61 @@
-def diagonal1(y, x):
-    while y > 0 and x > 0:
-        y -= 1
-        x -= 1
-    while y < N or x < N:
-        BRD[y][x] = 1
-        y += 1
-        x += 1
+# 2806. N-Queen
+# Level D3
+# Link : https://swexpertacademy.com/main/code/problem/problemDetail.do?contestProbId=AV7GKs06AU0DFAXB
 
 
-def diagonal2(y, x):
-    while y < N and x > 0:
-        y += 1
-        x -= 1
-    while y > 0 or x < N:
-        BRD[y][x] = 1
-        y -= 1
-        x += 1
+def check(y, x):
+    global cnt
+    if y == N:
+        cnt += 1
+        return cnt
+    else:
+        ly = ry = y
+        lx = rx = x
+        while ly > 0 and lx > 0:  # 대각선1 시작점 찾기
+            lx -= 1
+            ly -= 1
+        while rx + 1 < N and ry > 0:  # 대각선2 시작점 찾기
+            rx += 1
+            ry -= 1
+
+        for i in range(N):
+            if N > lx and lx >= 0 and N > ly and ly >= 0:
+                if BRD[ly][lx] == 0:
+                    lx += 1
+                    ly += 1
+                else:
+                    return False
+            if N > rx and rx >= 0 and N > ry and ry >= 0:
+                if BRD[ry][rx] == 0:
+                    rx -= 1
+                    ry += 1
+                else:
+                    return False
+            if BRD[y][i] != 0:
+                return False
+            if BRD[i][x] != 0:
+                return False
+        return True
 
 
-def cross(y, x):
-    for k in range(N):
-        BRD[y][k] = 1
-        BRD[k][x] = 1
+def chess(row):
+    global cnt
+    if row == N:
+        cnt += 1
+        return
+    else:
+        for i in range(N):
+            if check(row, i):
+                BRD[row][i] = 1
+                chess(row + 1)
+                BRD[row][i] = 0
+    return cnt
 
 
-def test_diagonal1(y, x):
-    while y > 0 and x > 0:
-        y -= 1
-        x -= 1
-    while y < N or x < N:
-        if BRD[y][x] == 1:
-            return False
-        y += 1
-        x += 1
-    return True
-
-
-def test_diagonal2(y, x):
-    while y < N and x > 0:
-        y += 1
-        x -= 1
-    while y > 0 or x < N:
-        if BRD[y][x] == 1:
-            return False
-        y -= 1
-        x += 1
-    return True
-
-
-def test_cross(y, x):
-    for q in range(N):
-        if BRD[y][q] == 1 or BRD[q][x] == 1:
-            return False
-    return True
-
-
-TC = int(input())
-for tc in range(1, TC+1):
+T = int(input())
+for tc in range(1, T + 1):
     N = int(input())
-    BRD = [[0]*N for _ in range(N)]
-    cnt = 0  # 경우의 수
-    Q_cnt = 0  # 퀸의 수
-    for i in range(N):
-        dy, dx = 0, i
-        Q_cnt += 1
-        diagonal1(dy, dx)
-        diagonal2(dy, dx)
-        cross(dy, dx)
-        dy, dx = 1, 0
-        while dy < N:
-            if test_cross(dy, dx) and test_diagonal1(dy, dx) and test_diagonal2(dy, dx):
-                cross(dy, dx)
-                diagonal1(dy, dx)
-                diagonal2(dy, dx)
-                dy += 1
-                dx = 0
-                Q_cnt += 1
-            else:
-                dx += 1
-                if dx == N:
-                    break
-        if Q_cnt == N:
-            cnt += 1
-        BRD = [[0] * N for _ in range(N)]
-    print(cnt)
+    BRD = [[0] * N for _ in range(N)]
+    cnt = 0
+
+    print(f'#{tc} {chess(0)}')

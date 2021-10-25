@@ -1,5 +1,10 @@
+# 1961. 숫자 배열 회전
+# Level D2
+# Link : https://swexpertacademy.com/main/code/problem/problemDetail.do?contestProbId=AV5Pq-OKAVYDFAUq
+
+
 CT = int(input())
-for w in range(1, CT+1):
+for w in range(1, CT + 1):
     N = int(input())
     lst = []
     lst1 = []
@@ -8,29 +13,29 @@ for w in range(1, CT+1):
     for q in range(N):
         lst.append(list(map(str, input().split())))
 
-    big_pot = [] #1
+    big_pot = []  # 1
     for y in range(N):
         pot = ''
-        for x in range(N-1, -1, -1):
+        for x in range(N - 1, -1, -1):
             pot += (lst[x][y])
         big_pot.append(pot)
     lst1.append(big_pot)
-    
-    big_pot = [] #2
-    for y in range(N-1, -1, -1):
+
+    big_pot = []  # 2
+    for y in range(N - 1, -1, -1):
         pot = ''
-        for x in range(N-1, -1, -1):
+        for x in range(N - 1, -1, -1):
             pot += (lst[y][x])
         big_pot.append(pot)
     lst2.append(big_pot)
 
-    big_pot = [] #3
-    for y in range(N-1, -1, -1):
+    big_pot = []  # 3
+    for y in range(N - 1, -1, -1):
         pot = ''
         for x in range(N):
             pot += (lst[x][y])
         big_pot.append(pot)
-    lst3.append(big_pot)   
+    lst3.append(big_pot)
 
     print(f'#{w}')
     for i in range(N):

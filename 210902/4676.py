@@ -1,5 +1,10 @@
+# 4676. 늘어지는 소리 만들기
+# Level D3
+# Link : https://swexpertacademy.com/main/code/problem/problemDetail.do?contestProbId=AWRKWITqfvIDFAV8
+
+
 TC = int(input())
-for tc in range(1, TC+1):
+for tc in range(1, TC + 1):
     S = input()
     lst = []
     for i in S:
@@ -15,4 +20,3 @@ for tc in range(1, TC+1):
     for i in lst:
         result += i
     print(f'#{tc} {result}')
-

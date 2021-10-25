@@ -1,3 +1,8 @@
+# 2116. 주사위 쌓기
+# 백준
+# Link : https://www.acmicpc.net/problem/2116
+
+
 def top_bottom(i):
     if i == 0:
         return 5
@@ -30,9 +35,9 @@ for i in range(6):
             if d == top:
                 bottom_num = dice_box[j][d]
         case += max(pot)
-        if j+1 < cnt:
+        if j + 1 < cnt:
             for k in range(6):
-                if dice_box[j+1][k] == bottom_num:
+                if dice_box[j + 1][k] == bottom_num:
                     bottom = k
                     top = top_bottom(k)
                     break

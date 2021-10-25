@@ -1,7 +1,12 @@
+# 1926. 간단한 369게임
+# Level D2
+# Link : https://swexpertacademy.com/main/code/problem/problemDetail.do?contestProbId=AV5PTeo6AHUDFAUq
+
+
 N = int(input())
 lst = []
 result = []
-for i in range(1, N+1):
+for i in range(1, N + 1):
     lst.append(str(i))
 for i in range(N):
     pot = ''

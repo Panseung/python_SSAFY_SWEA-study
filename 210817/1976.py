@@ -1,7 +1,12 @@
+# 1976. 시각 덧셈
+# Level D2
+# Link : https://swexpertacademy.com/main/code/problem/problemDetail.do?contestProbId=AV5PttaaAZIDFAUq
+
+
 TC = int(input())
-for tc in range(1, TC+1):
+for tc in range(1, TC + 1):
     h1, m1, h2, m2 = map(int, input().split())
-    result = (h1+h2)*60 + m1 + m2
+    result = (h1 + h2) * 60 + m1 + m2
     h = (result // 60) % 12
     if h == 0:
         h = 12

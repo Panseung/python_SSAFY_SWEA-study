@@ -1,5 +1,10 @@
+# 10804. 문자열의 거울상
+# Level D3
+# Link : https://swexpertacademy.com/main/code/problem/problemDetail.do?contestProbId=AXTC0x16D8EDFASe
+
+
 TC = int(input())
-for tc in range(1, TC+1):
+for tc in range(1, TC + 1):
     lst = []
     for i in input():
         lst.append(i)

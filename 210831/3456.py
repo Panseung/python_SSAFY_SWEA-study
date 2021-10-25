@@ -1,5 +1,10 @@
+# 3456. 직사각형 길이 찾기
+# Level D3
+# Link : https://swexpertacademy.com/main/code/problem/problemDetail.do?contestProbId=AWFPmsqqALwDFAV0
+
+
 TC = int(input())
-for tc in range(1, TC+1):
+for tc in range(1, TC + 1):
     lst = list(map(int, input().split()))
     if lst[0] == lst[1] and lst[0] == lst[2]:
         print(f'#{tc} {lst[0]}')

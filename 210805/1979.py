@@ -1,15 +1,41 @@
-cnt = int(input())
-for i in range(cnt):
-    M, N = map(int, input().split())
+# 1979. 어디에 단어가 들어갈 수 있을까
+# Level D2
+# Link : https://swexpertacademy.com/main/code/problem/problemDetail.do?contestProbId=AV5PuPq6AaQDFAUq
+
+
+CT = int(input())
+for q in range(1, CT + 1):
+    N, K = map(int, input().split())
     lst = []
-    for j in range(M):
-        lst.append(list(map(str, input().split())))
-    for j in range(M):
-        ary = ""
-        len_word = ""
-        for k in range(M):
-            ary += lst[j][k]
-        for k in range(M-N):
-            len_word += "0"
-        print(ary)
-        print(len_word)    
+    cnt = 0
+    for w in range(N):
+        lst.append(list(map(int, input().split())))
+
+    for w in range(N):
+        for i in range(N - K + 1):
+            if i == N - K:
+                if 0 not in lst[w][i:i + K] and lst[w][i - 1] == 0:
+                    cnt += 1
+            elif i == 0:
+                if 0 not in lst[w][i:i + K] and lst[w][i + K] == 0:
+                    cnt += 1
+            elif 0 not in lst[w][i:i + K] and lst[w][i + K] == 0 and lst[w][i - 1] == 0:
+                cnt += 1
+
+    for y in range(N):
+        for x in range(N):
+            if x > y:
+                lst[x][y], lst[y][x] = lst[y][x], lst[x][y]
+
+    for w in range(N):
+        for i in range(N - K + 1):
+            if i == N - K:
+                if 0 not in lst[w][i:i + K] and lst[w][i - 1] == 0:
+                    cnt += 1
+            elif i == 0:
+                if 0 not in lst[w][i:i + K] and lst[w][i + K] == 0:
+                    cnt += 1
+            elif 0 not in lst[w][i:i + K] and lst[w][i + K] == 0 and lst[w][i - 1] == 0:
+                cnt += 1
+
+    print(f'#{q} {cnt}')

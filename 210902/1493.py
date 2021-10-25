@@ -1,3 +1,8 @@
+# 1493. 수의 새로운 연산
+# Level D3
+# Link : https://swexpertacademy.com/main/code/problem/problemDetail.do?contestProbId=AV2b-QGqADMBBASw
+
+
 def new_cal(num):
     pos = [1, 1]
     cnt = 1
@@ -31,9 +36,9 @@ def new_cal_reverse(lst):
 
 
 TC = int(input())
-for tc in range(1, TC+1):
+for tc in range(1, TC + 1):
     p, q = map(int, input().split())
     p = new_cal(p)
     q = new_cal(q)
-    result = [p[0]+q[0], p[1]+q[1]]
+    result = [p[0] + q[0], p[1] + q[1]]
     print(f'#{tc} {new_cal_reverse(result)}')

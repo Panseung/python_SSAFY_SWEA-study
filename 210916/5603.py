@@ -1,3 +1,8 @@
+# 5603. [Professional] 건초더미
+# Level D3
+# Link : https://swexpertacademy.com/main/code/problem/problemDetail.do?contestProbId=AWXGEbd6cjMDFAUo
+
+
 TC = int(input())
 for tc in range(1, TC+1):
     N = int(input())

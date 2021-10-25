@@ -1,11 +1,15 @@
+# 1940. 가랏! RC카!
+# Level D2
+# Link : https://swexpertacademy.com/main/code/problem/problemDetail.do?contestProbId=AV5PjMgaALgDFAUq
+
 CT = int(input())
-for i in range(1, CT+1):
+for i in range(1, CT + 1):
     N = int(input())
     lst = []
     pos = 0
     speed = 0
     for j in range(N):
-        lst.append(list(map(int,input().split())))
+        lst.append(list(map(int, input().split())))
     for j in range(len(lst)):
         if len(lst[j]) == 1:
             pos += speed

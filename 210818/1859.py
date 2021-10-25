@@ -1,3 +1,8 @@
+# 1859. 백만 장자 프로젝트
+# Level D2
+# Link : https://swexpertacademy.com/main/code/problem/problemDetail.do?contestProbId=AV5LrsUaDxcDFAXc
+
+
 def wonjae(lst):
     day = 0
     sell_price = max(lst)
@@ -5,12 +10,12 @@ def wonjae(lst):
     paying = 0
     earning = 0
     while day < len(lst):
-        if lst[day] < sell_price:       #오늘이 가장 비싼날이 아니면 구입
+        if lst[day] < sell_price:  # 오늘이 가장 비싼날이 아니면 구입
             paying += lst[day]
             items += 1
             day += 1
-        elif lst[day] == sell_price:    #오늘이 가장 비싼날이면 판매
-            earning += lst[day]*items - paying
+        elif lst[day] == sell_price:  # 오늘이 가장 비싼날이면 판매
+            earning += lst[day] * items - paying
             paying = 0
             items = 0
             sell_price = 0
@@ -20,8 +25,9 @@ def wonjae(lst):
                     sell_price = lst[i]
     return earning
 
+
 TC = int(input())
-for tc in range(1, TC+1):
+for tc in range(1, TC + 1):
     N = int(input())
     lst = list(map(int, input().split()))
     print(f'#{tc} {wonjae(lst)}')
