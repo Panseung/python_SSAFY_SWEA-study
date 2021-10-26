@@ -1,5 +1,6 @@
-# link
-# https://www.acmicpc.net/status?user_id=jodie9596&problem_id=14501&from_mine=1
+# 14501. 퇴사
+# Level Silver 3
+# link : https://www.acmicpc.net/problem/14501
 
 
 def solve(n, pot):
@@ -19,7 +20,7 @@ N = int(input())
 lst = []
 for _ in range(N):
     a, b = map(int, input().split())
-    lst.append([a, b])
+    lst.append([a, b])  # a : 걸리는 날짜 b : 금액
 result = 0
 solve(0, 0)
 print(result)
