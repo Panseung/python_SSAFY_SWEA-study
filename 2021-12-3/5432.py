@@ -11,7 +11,7 @@ for tc in range(1, TC + 1):
     result = 0  # 출력할 잘린 막대기 갯수들
     while pos < len(case):
         if case[pos] == '(':
-            if case[pos+1] == ')':
+            if case[pos + 1] == ')':
                 result += res_bars
                 pos += 2
             else:
@@ -23,4 +23,3 @@ for tc in range(1, TC + 1):
             pos += 1
 
     print(f'#{tc} {result}')
-

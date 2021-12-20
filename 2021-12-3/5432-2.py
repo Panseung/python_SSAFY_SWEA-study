@@ -11,7 +11,7 @@ for tc in range(1, TC + 1):
     result = 0
     while pos < len(case):
         if case[pos] == '(':
-            if case[pos+1] == ')':
+            if case[pos + 1] == ')':
                 result += len(stack)
                 pos += 2
             else:
