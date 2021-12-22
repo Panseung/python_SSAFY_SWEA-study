@@ -15,7 +15,7 @@ for tc in range(1, TC + 1):
         students.append(list(map(my_space, input().split())))
 
     result_time = 0
-
+    corridor = [0] * 201
     while students:
         result_time += 1
 
@@ -24,7 +24,6 @@ for tc in range(1, TC + 1):
         for i in range(len(students)):
             my_start = min(students[i])
             my_end = max(students[i])
-
             test = True
 
             for start, end in using_space:
