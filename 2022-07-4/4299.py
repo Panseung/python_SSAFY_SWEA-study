@@ -6,5 +6,14 @@ TC = int(input())
 for tc in range(1, TC + 1):
     d, h, m = map(int, input().split())
     result = 0
+    result -= 60
+    result -= 24 * 60 * 2
+    d += 1
+    h += 24
+    m += 60
+    result += m - 11
+    result += (h - 11) * 60
     result += (d - 11) * 24 * 60
-    result += ()
+    if result < 0:
+        result = -1
+    print(f'#{tc} {result}')
